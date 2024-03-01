@@ -1,0 +1,787 @@
+
+**** 05/19/23 19:48:30 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\test-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "D:/REDLED.lib" 
+* From [PSPICE NETLIST] section of D:\Orcad\Working directory\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM r 17k 27k 10 
+.OPTIONS ADVCONV
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TEST
+.EXTERNAL OUTPUT VDC
+.EXTERNAL OUTPUT -VDC
+R_R1         N00101 DC  1k TC=0,0 
+R_R2         0 N00101  5.66k TC=0,0 
+V_V1         DC 0 14
+R_R3         N00390 N00408  1k TC=0,0 
+R_R4         N00390 VREF  1k TC=0,0 
+R_R5         N00439 N00454  1k TC=0,0 
+R_R6         N00408 N00412  1k TC=0,0 
+R_R7         N00412 N00491  1k TC=0,0 
+R_R8         N02107 N00491  1k TC=0,0 
+R_R9         N00599 DC  420 TC=0,0 
+Q_Q1         N00599 N005830 0 PN2221
+R_R10         0 N00439  1k TC=0,0 
+R_R11         N00733 0  {r} TC=0,0 
+R_R12         DC N00737  10k TC=0,0 
+Q_Q2         N02081 N02013 N00733 PN5137
+Q_Q3         N00737 N02013 N02013 PN2221
+R_R13         N02081 DC  30k TC=0,0 
+R_R14         0 N02013  100k TC=0,0 
+V_V2         -VDC 0 -14
+V_V3         VDC 0 14
+R_R15         N00491 N005830  1k TC=0,0 
+D_D2         N02107 0 Dbreak 
+X_U1A         VREF N00412 -VDC VDC N00491 TL084
+X_U1B         N00390 N00439 VDC -VDC N00408 TL084
+X_U1C         N00733 N00454 VDC -VDC N00454 TL084
+X_U1D         N00101 VREF VDC -VDC VREF TL084
+.PARAM  r=1
+
+**** RESUMING sim.cir ****
+.END
+
+**** 05/19/23 19:48:30 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\test-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          X_U1A.x_tl084.dx 
+          IS   10.000000E-15  800.000000E-18 
+          RS     .1                          
+         CJO  100.000000E-15                 
+
+
+               X_U1A.x_tl084.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+               X_U1B.x_tl084.dx 
+          IS  800.000000E-18 
+
+
+               X_U1B.x_tl084.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+               X_U1C.x_tl084.dx 
+          IS  800.000000E-18 
+
+
+               X_U1C.x_tl084.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+               X_U1D.x_tl084.dx 
+          IS  800.000000E-18 
+
+
+               X_U1D.x_tl084.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+**** 05/19/23 19:48:30 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\test-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               PN2221          PN5137          
+               NPN             NPN             
+       LEVEL    1               1            
+          IS   14.340000E-15   14.340000E-15 
+          BF  118.6           134.2          
+          NF    1               1            
+         VAF   74.03           74.03         
+         IKF     .2524           .2571       
+         ISE   14.340000E-15   14.340000E-15 
+          NE    1.236           1.248        
+          BR    7.134           6.865        
+          NR    1               1            
+         ISS    0               0            
+          RB   10              10            
+          RE    0               0            
+          RC    1               1            
+         CJE   22.010000E-12   22.010000E-12 
+         VJE     .75             .75         
+         MJE     .377            .377        
+         CJC    7.306000E-12    9.393000E-12 
+         VJC     .75             .75         
+         MJC     .3416           .3416       
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          TF  410.300000E-12  409.400000E-12 
+         XTF    3               3            
+         VTF    1.7             1.7          
+         ITF     .6              .6          
+          TR   50.960000E-09   49.950000E-09 
+         XTB    1.5             1.5          
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.42         
+           D     .87             .87         
+
+
+**** 05/19/23 19:48:30 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\test-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.x_tl084.jx1 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+               X_U1A.x_tl084.jx2 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+               X_U1B.x_tl084.jx1 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+               X_U1B.x_tl084.jx2 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+               X_U1C.x_tl084.jx1 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+               X_U1C.x_tl084.jx2 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+               X_U1D.x_tl084.jx1 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+               X_U1D.x_tl084.jx2 
+               NJF             
+         VTO   -1            
+        BETA  222.070000E-06 
+          IS  100.000000E-12 
+
+
+Starting pseudo-transient algorithm.
+
+INFO(ORPSIM-16594): To improve Pseudotransient Convergence and Performance, set following options to relax stabilization criteria for capacitor currents and inductor voltages: PTRANABSTOL=1e-5, PTRANVNTOL=1e-4
+Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   DC)     .7473  (  VDC)     .7473  ( -VDC)    -.7473  ( VREF)     .0047      
+
+(N00101)     .6351 (N00390)     .0017 (N00408)    -.0013 (N00412)    -.0288     
+
+(N00439) 193.3E-06 (N00454) 386.5E-06 (N00491)-17.38E-06 (N00599)     .7469     
+
+(N00733)     .0094 (N00737)     .7372 (N02013)     .1764 (N02081)     .7081     
+
+(N02107)-16.12E-06 (N005830)     .0011                                          
+
+(X_U1A.x_tl084.6)     .0010           (X_U1A.x_tl084.7)    -.0194               
+
+(X_U1A.x_tl084.8)    -.0194           (X_U1A.x_tl084.9)    0.0000               
+
+(X_U1B.x_tl084.6)-989.7E-09           (X_U1B.x_tl084.7)-47.55E-06               
+
+(X_U1B.x_tl084.8)-47.55E-06           (X_U1B.x_tl084.9)    0.0000               
+
+(X_U1C.x_tl084.6)-728.0E-09           (X_U1C.x_tl084.7) 396.5E-06               
+
+(X_U1C.x_tl084.8) 396.5E-06           (X_U1C.x_tl084.9)    0.0000               
+
+(X_U1D.x_tl084.6)-22.22E-06           (X_U1D.x_tl084.7)     .0098               
+
+(X_U1D.x_tl084.8)     .0098           (X_U1D.x_tl084.9)    0.0000               
+
+(X_U1A.x_tl084.10)    -.3247          (X_U1A.x_tl084.11)    -.3667              
+
+(X_U1A.x_tl084.12)    -.3420          (X_U1A.x_tl084.53)    -.8709              
+
+(X_U1A.x_tl084.54)     .8709          (X_U1A.x_tl084.90)    -.0207              
+
+(X_U1A.x_tl084.91)    2.1352          (X_U1A.x_tl084.92)   -2.1352              
+
+(X_U1A.x_tl084.99)    0.0000          (X_U1B.x_tl084.10)     .6885              
+
+(X_U1B.x_tl084.11)     .7232          (X_U1B.x_tl084.12)     .7232              
+
+(X_U1B.x_tl084.53)     .6237          (X_U1B.x_tl084.54)    -.6237              
+
+(X_U1B.x_tl084.90)     .0013          (X_U1B.x_tl084.91)    2.1352              
+
+(X_U1B.x_tl084.92)   -2.1352          (X_U1B.x_tl084.99)    0.0000              
+
+(X_U1C.x_tl084.10)     .6889          (X_U1C.x_tl084.11)     .7234              
+
+(X_U1C.x_tl084.12)     .7230          (X_U1C.x_tl084.53)     .6237              
+
+(X_U1C.x_tl084.54)    -.6237          (X_U1C.x_tl084.90) 10.72E-06              
+
+(X_U1C.x_tl084.91)    2.1352          (X_U1C.x_tl084.92)   -2.1352              
+
+(X_U1C.x_tl084.99)    0.0000          (X_U1D.x_tl084.10)     .7031              
+
+(X_U1D.x_tl084.11)     .7293          (X_U1D.x_tl084.12)     .7171              
+
+(X_U1D.x_tl084.53)     .6237          (X_U1D.x_tl084.54)    -.6237              
+
+(X_U1D.x_tl084.90)     .0055          (X_U1D.x_tl084.91)    2.1352              
+
+(X_U1D.x_tl084.92)   -2.1352          (X_U1D.x_tl084.99)    0.0000          
+
+Resuming Simulation with the following settings
+ITL1 = 291
+ITL2 = 171
+
+
+Starting pseudo-transient algorithm.
+
+WARNING(ORPSIM-16534): Using high values of ITL4 for Speed Level > 0 may increase total simulation job time.
+Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   DC)     .7473  (  VDC)     .7473  ( -VDC)    -.7473  ( VREF)     .0047      
+
+(N00101)     .6351 (N00390)     .0017 (N00408)    -.0013 (N00412)    -.0288     
+
+(N00439) 193.5E-06 (N00454) 386.7E-06 (N00491)-17.21E-06 (N00599)     .7469     
+
+(N00733)     .0094 (N00737)     .7372 (N02013)     .1764 (N02081)     .7081     
+
+(N02107)-16.09E-06 (N005830)     .0011                                          
+
+(X_U1A.x_tl084.6)     .0010           (X_U1A.x_tl084.7)    -.0194               
+
+(X_U1A.x_tl084.8)    -.0194           (X_U1A.x_tl084.9)    0.0000               
+
+(X_U1B.x_tl084.6)-989.8E-09           (X_U1B.x_tl084.7)-47.56E-06               
+
+(X_U1B.x_tl084.8)-47.56E-06           (X_U1B.x_tl084.9)    0.0000               
+
+(X_U1C.x_tl084.6)-728.4E-09           (X_U1C.x_tl084.7) 396.8E-06               
+
+(X_U1C.x_tl084.8) 396.8E-06           (X_U1C.x_tl084.9)    0.0000               
+
+(X_U1D.x_tl084.6)-22.22E-06           (X_U1D.x_tl084.7)     .0098               
+
+(X_U1D.x_tl084.8)     .0098           (X_U1D.x_tl084.9)    0.0000               
+
+(X_U1A.x_tl084.10)    -.3247          (X_U1A.x_tl084.11)    -.3667              
+
+(X_U1A.x_tl084.12)    -.3420          (X_U1A.x_tl084.53)    -.8709              
+
+(X_U1A.x_tl084.54)     .8709          (X_U1A.x_tl084.90)    -.0207              
+
+(X_U1A.x_tl084.91)    2.1352          (X_U1A.x_tl084.92)   -2.1352              
+
+(X_U1A.x_tl084.99)    0.0000          (X_U1B.x_tl084.10)     .6885              
+
+(X_U1B.x_tl084.11)     .7232          (X_U1B.x_tl084.12)     .7232              
+
+(X_U1B.x_tl084.53)     .6237          (X_U1B.x_tl084.54)    -.6237              
+
+(X_U1B.x_tl084.90)     .0013          (X_U1B.x_tl084.91)    2.1352              
+
+(X_U1B.x_tl084.92)   -2.1352          (X_U1B.x_tl084.99)    0.0000              
+
+(X_U1C.x_tl084.10)     .6889          (X_U1C.x_tl084.11)     .7234              
+
+(X_U1C.x_tl084.12)     .7230          (X_U1C.x_tl084.53)     .6237              
+
+(X_U1C.x_tl084.54)    -.6237          (X_U1C.x_tl084.90) 10.73E-06              
+
+(X_U1C.x_tl084.91)    2.1352          (X_U1C.x_tl084.92)   -2.1352              
+
+(X_U1C.x_tl084.99)    0.0000          (X_U1D.x_tl084.10)     .7031              
+
+(X_U1D.x_tl084.11)     .7293          (X_U1D.x_tl084.12)     .7171              
+
+(X_U1D.x_tl084.53)     .6237          (X_U1D.x_tl084.54)    -.6237              
+
+(X_U1D.x_tl084.90)     .0055          (X_U1D.x_tl084.91)    2.1352              
+
+(X_U1D.x_tl084.92)   -2.1352          (X_U1D.x_tl084.99)    0.0000          
+
+Resuming Simulation with the following settings
+ITL1 = 565
+ITL2 = 1000
+
+
+Starting pseudo-transient algorithm.
+Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   DC)     .7473  (  VDC)     .7473  ( -VDC)    -.7473  ( VREF)     .0047      
+
+(N00101)     .6351 (N00390)     .0017 (N00408)    -.0013 (N00412)    -.0288     
+
+(N00439) 193.6E-06 (N00454) 387.0E-06 (N00491)-15.18E-06 (N00599)     .7469     
+
+(N00733)     .0094 (N00737)     .7372 (N02013)     .1764 (N02081)     .7081     
+
+(N02107)-16.07E-06 (N005830)     .0011                                          
+
+(X_U1A.x_tl084.6)     .0010           (X_U1A.x_tl084.7)    -.0194               
+
+(X_U1A.x_tl084.8)    -.0194           (X_U1A.x_tl084.9)    0.0000               
+
+(X_U1B.x_tl084.6)-991.1E-09           (X_U1B.x_tl084.7)-47.56E-06               
+
+(X_U1B.x_tl084.8)-47.56E-06           (X_U1B.x_tl084.9)    0.0000               
+
+(X_U1C.x_tl084.6)-728.9E-09           (X_U1C.x_tl084.7) 397.1E-06               
+
+(X_U1C.x_tl084.8) 397.1E-06           (X_U1C.x_tl084.9)    0.0000               
+
+(X_U1D.x_tl084.6)-22.23E-06           (X_U1D.x_tl084.7)     .0098               
+
+(X_U1D.x_tl084.8)     .0098           (X_U1D.x_tl084.9)    0.0000               
+
+(X_U1A.x_tl084.10)    -.3247          (X_U1A.x_tl084.11)    -.3667              
+
+(X_U1A.x_tl084.12)    -.3420          (X_U1A.x_tl084.53)    -.8709              
+
+(X_U1A.x_tl084.54)     .8709          (X_U1A.x_tl084.90)    -.0207              
+
+(X_U1A.x_tl084.91)    2.1352          (X_U1A.x_tl084.92)   -2.1352              
+
+(X_U1A.x_tl084.99)    0.0000          (X_U1B.x_tl084.10)     .6885              
+
+(X_U1B.x_tl084.11)     .7232          (X_U1B.x_tl084.12)     .7232              
+
+(X_U1B.x_tl084.53)     .6237          (X_U1B.x_tl084.54)    -.6237              
+
+(X_U1B.x_tl084.90)     .0013          (X_U1B.x_tl084.91)    2.1352              
+
+(X_U1B.x_tl084.92)   -2.1352          (X_U1B.x_tl084.99)    0.0000              
+
+(X_U1C.x_tl084.10)     .6889          (X_U1C.x_tl084.11)     .7234              
+
+(X_U1C.x_tl084.12)     .7230          (X_U1C.x_tl084.53)     .6237              
+
+(X_U1C.x_tl084.54)    -.6237          (X_U1C.x_tl084.90) 10.74E-06              
+
+(X_U1C.x_tl084.91)    2.1352          (X_U1C.x_tl084.92)   -2.1352              
+
+(X_U1C.x_tl084.99)    0.0000          (X_U1D.x_tl084.10)     .7031              
+
+(X_U1D.x_tl084.11)     .7293          (X_U1D.x_tl084.12)     .7171              
+
+(X_U1D.x_tl084.53)     .6237          (X_U1D.x_tl084.54)    -.6237              
+
+(X_U1D.x_tl084.90)     .0055          (X_U1D.x_tl084.91)    2.1352              
+
+(X_U1D.x_tl084.92)   -2.1352          (X_U1D.x_tl084.99)    0.0000          
+
+Resuming Simulation with the following settings
+ITL1 = 1000
+
+
+Starting pseudo-transient algorithm.
+Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   DC)     .7473  (  VDC)     .7473  ( -VDC)    -.7473  ( VREF)     .0047      
+
+(N00101)     .6351 (N00390)     .0017 (N00408)    -.0013 (N00412)    -.0288     
+
+(N00439) 193.7E-06 (N00454) 387.3E-06 (N00491)-17.22E-06 (N00599)     .7469     
+
+(N00733)     .0094 (N00737)     .7372 (N02013)     .1764 (N02081)     .7081     
+
+(N02107)-16.09E-06 (N005830)     .0011                                          
+
+(X_U1A.x_tl084.6)     .0010           (X_U1A.x_tl084.7)    -.0194               
+
+(X_U1A.x_tl084.8)    -.0194           (X_U1A.x_tl084.9)    0.0000               
+
+(X_U1B.x_tl084.6)-989.8E-09           (X_U1B.x_tl084.7)-47.56E-06               
+
+(X_U1B.x_tl084.8)-47.56E-06           (X_U1B.x_tl084.9)    0.0000               
+
+(X_U1C.x_tl084.6)-729.4E-09           (X_U1C.x_tl084.7) 397.3E-06               
+
+(X_U1C.x_tl084.8) 397.3E-06           (X_U1C.x_tl084.9)    0.0000               
+
+(X_U1D.x_tl084.6)-22.22E-06           (X_U1D.x_tl084.7)     .0098               
+
+(X_U1D.x_tl084.8)     .0098           (X_U1D.x_tl084.9)    0.0000               
+
+(X_U1A.x_tl084.10)    -.3247          (X_U1A.x_tl084.11)    -.3667              
+
+(X_U1A.x_tl084.12)    -.3420          (X_U1A.x_tl084.53)    -.8709              
+
+(X_U1A.x_tl084.54)     .8709          (X_U1A.x_tl084.90)    -.0207              
+
+(X_U1A.x_tl084.91)    2.1352          (X_U1A.x_tl084.92)   -2.1352              
+
+(X_U1A.x_tl084.99)    0.0000          (X_U1B.x_tl084.10)     .6885              
+
+(X_U1B.x_tl084.11)     .7232          (X_U1B.x_tl084.12)     .7232              
+
+(X_U1B.x_tl084.53)     .6237          (X_U1B.x_tl084.54)    -.6237              
+
+(X_U1B.x_tl084.90)     .0013          (X_U1B.x_tl084.91)    2.1352              
+
+(X_U1B.x_tl084.92)   -2.1352          (X_U1B.x_tl084.99)    0.0000              
+
+(X_U1C.x_tl084.10)     .6889          (X_U1C.x_tl084.11)     .7234              
+
+(X_U1C.x_tl084.12)     .7230          (X_U1C.x_tl084.53)     .6237              
+
+(X_U1C.x_tl084.54)    -.6237          (X_U1C.x_tl084.90) 10.75E-06              
+
+(X_U1C.x_tl084.91)    2.1352          (X_U1C.x_tl084.92)   -2.1352              
+
+(X_U1C.x_tl084.99)    0.0000          (X_U1D.x_tl084.10)     .7031              
+
+(X_U1D.x_tl084.11)     .7293          (X_U1D.x_tl084.12)     .7171              
+
+(X_U1D.x_tl084.53)     .6237          (X_U1D.x_tl084.54)    -.6237              
+
+(X_U1D.x_tl084.90)     .0055          (X_U1D.x_tl084.91)    2.1352              
+
+(X_U1D.x_tl084.92)   -2.1352          (X_U1D.x_tl084.99)    0.0000          
+
+
+  These voltages failed to converge:
+
+    V(N00390)                 =    1.358mV  \    1.688mV
+    V(N00408)                 =   -1.581mV  \   -1.277mV
+    V(VREF)                   =    4.298mV  \    4.652mV
+    V(N00412)                 =   -35.21mV  \   -28.83mV
+    V(N00491)                 =   -21.09mV  \   -17.22uV
+    V(N02107)                 =   -21.09mV  \   -16.09uV
+    V(N005830)                =   -21.09mV  \    1.059mV
+    V(N00733)                 =    2.403uV  \    9.398mV
+    V(N00737)                 =   747.32mV  \   737.23mV
+    V(N02081)                 =   747.32mV  \   708.13mV
+    V(N02013)                 =    1.193uV  \   176.36mV
+    V(X_U1A.x_tl084.11)       =  -369.20mV  \  -366.68mV
+    V(X_U1A.x_tl084.12)       =  -344.52mV  \  -342.00mV
+    V(X_U1A.x_tl084.6)        =    35.38uV  \    1.030mV
+    V(X_U1A.x_tl084.7)        =   -20.38mV  \   -19.39mV
+    V(X_U1A.x_tl084.10)       =  -326.66mV  \  -324.67mV
+    V(X_U1A.x_tl084.90)       =   753.92uV  \   -20.68mV
+    V(X_U1A.x_tl084.8)        =   -20.38mV  \   -19.39mV
+    V(X_U1B.x_tl084.90)       =    1.638mV  \    1.312mV
+    V(X_U1D.x_tl084.6)        =   -1.189uV  \   -22.22uV
+    V(X_U1D.x_tl084.7)        =     9.83mV  \     9.81mV
+    V(X_U1D.x_tl084.90)       =    5.907mV  \    5.507mV
+    V(X_U1D.x_tl084.8)        =     9.83mV  \     9.81mV
+
+  These supply currents failed to converge:
+
+    I(X_U1A.x_tl084.egnd)     =   -14.14uA  \   387.42uA
+    I(X_U1B.x_tl084.egnd)     =   -30.14uA  \   -24.04uA
+    I(X_U1C.x_tl084.egnd)     =   352.93nA  \   345.89nA
+    I(X_U1D.x_tl084.egnd)     =  -110.22uA  \  -102.72uA
+    I(V_V1)                   =  -112.21uA  \  -115.60uA
+    I(V_V2)                   =    4.690mA  \    10.00GA
+    I(V_V3)                   =   -4.536mA  \   -10.00GA
+    I(X_U1A.x_tl084.vb)       =   353.77pA  \    10.30nA
+    I(X_U1A.x_tl084.vc)       =   -1.666pA  \  -332.32mA
+    I(X_U1A.x_tl084.ve)       =   -1.856pA  \  -332.73mA
+    I(X_U1A.x_tl084.vlim)     =    14.12uA  \  -387.44uA
+    I(X_U1B.x_tl084.vb)       =  -682.47fA  \    -9.90pA
+    I(X_U1B.x_tl084.vc)       =   626.08fA  \    1.183uA
+    I(X_U1B.x_tl084.ve)       =   708.28fA  \    1.178uA
+    I(X_U1B.x_tl084.vlim)     =    30.69uA  \    24.59uA
+    I(X_U1C.x_tl084.vb)       =  -379.80fA  \   -7.294pA
+    I(X_U1C.x_tl084.vc)       =   624.11fA  \    1.177uA
+    I(X_U1C.x_tl084.ve)       =   710.25fA  \    1.185uA
+    I(X_U1C.x_tl084.vlim)     =   193.86nA  \   201.31nA
+    I(X_U1D.x_tl084.vb)       =   -11.89pA  \  -222.23pA
+    I(X_U1D.x_tl084.vc)       =   620.20fA  \    1.108uA
+    I(X_U1D.x_tl084.ve)       =   714.16fA  \    1.253uA
+    I(X_U1D.x_tl084.vlim)     =   110.66uA  \   103.17uA
+
+  These devices failed to converge:
+    X_U1A.x_tl084.dc X_U1A.x_tl084.de X_U1A.x_tl084.dp X_U1A.x_tl084.fb 
+    X_U1B.x_tl084.fb X_U1C.x_tl084.fb X_U1D.x_tl084.fb X_U1A.x_tl084.j1 
+    X_U1A.x_tl084.j2 Q_Q2      
+
+ERROR -- Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.001
+**** Param: ABSTOL = 1e-12
+**** Param: VNTOL = 1e-06
+**** Param: GMIN = 1e-12
+**** Param: TSTOP = 0.01
+**** Param: TMAX = 0
+**** Param: ITL1 = 1000
+**** Param: ITL2 = 1000
+**** Param: ITL4 = 100
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 1e-06
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-10
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 0
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+
+Starting pseudo-transient algorithm.
+Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   DC)     .7473  (  VDC)     .7473  ( -VDC)    -.7473  ( VREF)     .0047      
+
+(N00101)     .6351 (N00390)     .0017 (N00408)    -.0013 (N00412)    -.0288     
+
+(N00439) 193.9E-06 (N00454) 387.5E-06 (N00491)-16.37E-06 (N00599)     .7469     
+
+(N00733)     .0094 (N00737)     .7372 (N02013)     .1764 (N02081)     .7081     
+
+(N02107)-15.55E-06 (N005830)     .0011                                          
+
+(X_U1A.x_tl084.6)     .0010           (X_U1A.x_tl084.7)    -.0194               
+
+(X_U1A.x_tl084.8)    -.0194           (X_U1A.x_tl084.9)    0.0000               
+
+(X_U1B.x_tl084.6)-990.3E-09           (X_U1B.x_tl084.7)-47.56E-06               
+
+(X_U1B.x_tl084.8)-47.56E-06           (X_U1B.x_tl084.9)    0.0000               
+
+(X_U1C.x_tl084.6)-729.9E-09           (X_U1C.x_tl084.7) 397.6E-06               
+
+(X_U1C.x_tl084.8) 397.6E-06           (X_U1C.x_tl084.9)    0.0000               
+
+(X_U1D.x_tl084.6)-22.22E-06           (X_U1D.x_tl084.7)     .0098               
+
+(X_U1D.x_tl084.8)     .0098           (X_U1D.x_tl084.9)    0.0000               
+
+(X_U1A.x_tl084.10)    -.3247          (X_U1A.x_tl084.11)    -.3667              
+
+(X_U1A.x_tl084.12)    -.3420          (X_U1A.x_tl084.53)    -.8709              
+
+(X_U1A.x_tl084.54)     .8709          (X_U1A.x_tl084.90)    -.0207              
+
+(X_U1A.x_tl084.91)    2.1352          (X_U1A.x_tl084.92)   -2.1352              
+
+(X_U1A.x_tl084.99)    0.0000          (X_U1B.x_tl084.10)     .6885              
+
+(X_U1B.x_tl084.11)     .7232          (X_U1B.x_tl084.12)     .7232              
+
+(X_U1B.x_tl084.53)     .6237          (X_U1B.x_tl084.54)    -.6237              
+
+(X_U1B.x_tl084.90)     .0013          (X_U1B.x_tl084.91)    2.1352              
+
+(X_U1B.x_tl084.92)   -2.1352          (X_U1B.x_tl084.99)    0.0000              
+
+(X_U1C.x_tl084.10)     .6889          (X_U1C.x_tl084.11)     .7234              
+
+(X_U1C.x_tl084.12)     .7230          (X_U1C.x_tl084.53)     .6237              
+
+(X_U1C.x_tl084.54)    -.6237          (X_U1C.x_tl084.90) 10.75E-06              
+
+(X_U1C.x_tl084.91)    2.1352          (X_U1C.x_tl084.92)   -2.1352              
+
+(X_U1C.x_tl084.99)    0.0000          (X_U1D.x_tl084.10)     .7031              
+
+(X_U1D.x_tl084.11)     .7293          (X_U1D.x_tl084.12)     .7171              
+
+(X_U1D.x_tl084.53)     .6237          (X_U1D.x_tl084.54)    -.6237              
+
+(X_U1D.x_tl084.90)     .0055          (X_U1D.x_tl084.91)    2.1352              
+
+(X_U1D.x_tl084.92)   -2.1352          (X_U1D.x_tl084.99)    0.0000          
+
+
+  These voltages failed to converge:
+
+    V(N00390)                 =    1.348mV  \    1.688mV
+    V(N00408)                 =   -1.583mV  \   -1.277mV
+    V(VREF)                   =    4.278mV  \    4.652mV
+    V(N00412)                 =   -35.22mV  \   -28.83mV
+    V(N00491)                 =   -21.09mV  \   -16.37uV
+    V(N02107)                 =   -21.09mV  \   -15.55uV
+    V(N005830)                =   -21.09mV  \    1.059mV
+    V(N00733)                 =    2.405uV  \    9.404mV
+    V(N00737)                 =   747.32mV  \   737.23mV
+    V(N02081)                 =   747.32mV  \   708.13mV
+    V(N02013)                 =    1.193uV  \   176.36mV
+    V(X_U1A.x_tl084.11)       =  -369.21mV  \  -366.68mV
+    V(X_U1A.x_tl084.12)       =  -344.53mV  \  -342.00mV
+    V(X_U1A.x_tl084.6)        =    35.38uV  \    1.030mV
+    V(X_U1A.x_tl084.7)        =   -20.38mV  \   -19.39mV
+    V(X_U1A.x_tl084.10)       =  -326.68mV  \  -324.67mV
+    V(X_U1A.x_tl084.90)       =   754.32uV  \   -20.68mV
+    V(X_U1A.x_tl084.8)        =   -20.38mV  \   -19.39mV
+    V(X_U1B.x_tl084.90)       =    1.639mV  \    1.312mV
+    V(X_U1D.x_tl084.90)       =    5.906mV  \    5.507mV
+
+  These supply currents failed to converge:
+
+    I(X_U1A.x_tl084.egnd)     =   -14.15uA  \   387.43uA
+    I(X_U1B.x_tl084.egnd)     =   -30.16uA  \   -24.04uA
+    I(X_U1C.x_tl084.egnd)     =   353.14nA  \   345.74nA
+    I(X_U1D.x_tl084.egnd)     =  -110.19uA  \  -102.72uA
+    I(V_V1)                   =  -112.21uA  \  -115.60uA
+    I(V_V2)                   =    4.690mA  \    10.00GA
+    I(V_V3)                   =   -4.536mA  \   -10.00GA
+    I(X_U1A.x_tl084.vb)       =   353.76pA  \    10.30nA
+    I(X_U1A.x_tl084.vc)       =   -1.666pA  \  -331.99mA
+    I(X_U1A.x_tl084.ve)       =   -1.856pA  \  -332.41mA
+    I(X_U1A.x_tl084.vlim)     =    14.13uA  \  -387.46uA
+    I(X_U1B.x_tl084.vb)       =   -12.71pA  \    -9.90pA
+    I(X_U1B.x_tl084.vc)       =   626.08fA  \    1.068uA
+    I(X_U1B.x_tl084.ve)       =   708.28fA  \    1.063uA
+    I(X_U1B.x_tl084.vlim)     =    30.71uA  \    24.59uA
+    I(X_U1C.x_tl084.vc)       =   624.11fA  \    1.062uA
+    I(X_U1C.x_tl084.ve)       =   710.25fA  \    1.070uA
+    I(X_U1C.x_tl084.vlim)     =   193.66nA  \   201.46nA
+    I(X_U1D.x_tl084.vc)       =   620.22fA  \   992.75nA
+    I(X_U1D.x_tl084.ve)       =   714.14fA  \    1.139uA
+    I(X_U1D.x_tl084.vlim)     =   110.63uA  \   103.17uA
+
+  These devices failed to converge:
+    X_U1A.x_tl084.dc X_U1A.x_tl084.de X_U1A.x_tl084.dp X_U1A.x_tl084.fb 
+    X_U1B.x_tl084.fb X_U1C.x_tl084.fb X_U1D.x_tl084.fb X_U1A.x_tl084.j1 
+    X_U1A.x_tl084.j2 Q_Q2      
+
+ERROR -- Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+
+**** Interrupt ****
+
+          JOB ABORTED
+
+**** 05/19/23 19:48:30 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\test-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =      751.05
+

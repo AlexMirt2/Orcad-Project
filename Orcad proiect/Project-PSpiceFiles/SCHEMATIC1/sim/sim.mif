@@ -1,0 +1,4 @@
+ lib=D:\REDLED.lib, offset=1064, size=166
+ lib=D:\Orcad\tools\PSpice\Library\bipolar.lib, offset=13005, size=562
+ lib=D:\Orcad\tools\PSpice\Library\bipolar.lib, offset=8613, size=310
+ lib=D:\Orcad\tools\PSpice\Library\opamp.lib, offset=96448, size=1161

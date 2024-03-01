@@ -1,0 +1,262 @@
+
+**** 07/04/23 09:40:22 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\project-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "D:/REDLED.lib" 
+* From [PSPICE NETLIST] section of D:\Orcad\Working directory\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM r 17k 27k 100 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PROJECT
+R_R3         N06426 N06382 R_R3 2.67k TC=0,0 
+.model        R_R3 RES R=1 DEV=1% TC1=0 TC2=0
+R_R15         OUT N11467 R_R15 6.6k TC=0,0 
+.model        R_R15 RES R=1 DEV=1% TC1=0 TC2=0
+V_V3         VCC 0 14
+R_R10         0 N19270 R_R10 1k TC=0,0 
+.model        R_R10 RES R=1 DEV=1% TC1=0 TC2=0
+R_R9         N19685 VCC R_R9 49.9 TC=0,0 
+.model        R_R9 RES R=1 DEV=1% TC1=0 TC2=0
+R_R7         N06648 OUT R_R7 6.19k TC=0,0 
+.model        R_R7 RES R=1 DEV=1% TC1=0 TC2=0
+R_R6         VREF2 N06648 R_R6 1k TC=0,0 
+.model        R_R6 RES R=1 DEV=1% TC1=0 TC2=0
+R_R12         N06802 0  30k TC=0,0 
+R_R5         N19270 N06862 R_R5 2.67k TC=0,0 
+.model        R_R5 RES R=1 DEV=1% TC1=0 TC2=0
+R_R8         N06708 OUT R_R8 121 TC=0,0 
+.model        R_R8 RES R=1 DEV=1% TC1=0 TC2=0
+R_Rs         0 N28312  {r} TC=0,0 
+R_R4         N06426 VREF1 R_R4 1k TC=0,0 
+.model        R_R4 RES R=1 DEV=1% TC1=0 TC2=0
+V_V2         -VCC 0 -14
+R_R16         VCC N16310  1k TC=0,0 
+R_R17         N16310 N16327  140 TC=0,0 
+R_R18         N16327 N16447  1k TC=0,0 
+R_R19         N16447 VREF1  1k TC=0,0 
+R_R22         VCC N17785  1k TC=0,0 
+R_R23         N17793 N17817  1k TC=0,0 
+R_R20         N17785 N17793  442 TC=0,0 
+R_R21         N17817 VREF2  1k TC=0,0 
+Q_T3         N19685 N11467 0 Q2N2222
+D_D1          N06708 0 REDLED 
+X_U1A         N28312 N06862 VCC -VCC N06862 TL082
+X_U1B         N06648 N06382 VCC -VCC OUT TL082
+X_U2A         0 N16310 VCC -VCC N16327 TL082
+X_U2B         0 N16447 VCC -VCC VREF1 TL082
+X_U3A         0 N17785 VCC -VCC N17793 TL082
+X_U3B         0 N17817 VCC -VCC VREF2 TL082
+X_U4A         N19270 N06426 VCC -VCC N06382 TL082
+Q_Q1         N06802 N06802 VCC Q2N1132A
+Q_Q2         N28312 N06802 VCC Q2N1132A
+V_V4         N38499 0 5
+D_D2          N38527 0 REDLED 
+R_R24         N38527 N38499 R_R24 121 TC=0,0 
+.model        R_R24 RES R=1 DEV=1% TC1=0 TC2=0
+.PARAM  r=17k
+
+**** RESUMING sim.cir ****
+.END
+
+**** 07/04/23 09:40:22 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\project-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               REDLED          X_U1A.dx        X_U1A.dy        X_U1B.dx        
+          IS   34.035000E-12  800.000000E-18  800.000000E-18  800.000000E-18 
+           N    4.0418                                                       
+         ISR  100.000000E-12                                                 
+         IKF     .032684                                                     
+          BV  100                                                            
+         IBV  100.000000E-06                                                 
+          RS    3.5401                          1.000000E-03                 
+          TT    5.000000E-09                                                 
+         CJO    1.000000E-12                   10.000000E-12                 
+          VJ     .75                                                         
+           M     .3333                                                       
+
+
+               X_U1B.dy        X_U2A.dx        X_U2A.dy        X_U2B.dx        
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1.000000E-03                    1.000000E-03                 
+         CJO   10.000000E-12                   10.000000E-12                 
+
+
+               X_U2B.dy        X_U3A.dx        X_U3A.dy        X_U3B.dx        
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1.000000E-03                    1.000000E-03                 
+         CJO   10.000000E-12                   10.000000E-12                 
+
+
+               X_U3B.dy        X_U4A.dx        X_U4A.dy        
+          IS  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1.000000E-03                    1.000000E-03 
+         CJO   10.000000E-12                   10.000000E-12 
+
+
+**** 07/04/23 09:40:22 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\project-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         Q2N1132A        
+               NPN             PNP             
+       LEVEL    1               1            
+          IS   14.340000E-15    3.919000E-15 
+          BF  255.9            65.87         
+          NF    1               1            
+         VAF   74.03          100            
+         IKF     .2847           .25         
+         ISE   14.340000E-15                 
+          NE    1.307                        
+          BR    6.092          32.63         
+          NR    1               1            
+         ISS    0               0            
+          RB   10              10            
+          RE    0               0            
+          RC    1               1.1          
+         CJE   22.010000E-12   15.990000E-12 
+         VJE     .75             .75         
+         MJE     .377            .5125       
+         CJC    7.306000E-12   21.540000E-12 
+         VJC     .75             .75         
+         MJC     .3416           .3575       
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          TF  411.100000E-12    1.124000E-09 
+         XTF    3              10            
+         VTF    1.7             6            
+         ITF     .6              .4          
+          TR   46.910000E-09   12.880000E-09 
+         XTB    1.5             1.5          
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+**** 07/04/23 09:40:22 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\project-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.jx1       X_U1A.jx2       X_U1B.jx1       X_U1B.jx2       
+               NJF             NJF             NJF             NJF             
+         VTO   -1              -1              -1              -1            
+        BETA  222.070000E-06  222.070000E-06  222.070000E-06  222.070000E-06 
+          IS  100.000000E-12  100.000000E-12  100.000000E-12  100.000000E-12 
+
+
+               X_U2A.jx1       X_U2A.jx2       X_U2B.jx1       X_U2B.jx2       
+               NJF             NJF             NJF             NJF             
+         VTO   -1              -1              -1              -1            
+        BETA  222.070000E-06  222.070000E-06  222.070000E-06  222.070000E-06 
+          IS  100.000000E-12  100.000000E-12  100.000000E-12  100.000000E-12 
+
+
+               X_U3A.jx1       X_U3A.jx2       X_U3B.jx1       X_U3B.jx2       
+               NJF             NJF             NJF             NJF             
+         VTO   -1              -1              -1              -1            
+        BETA  222.070000E-06  222.070000E-06  222.070000E-06  222.070000E-06 
+          IS  100.000000E-12  100.000000E-12  100.000000E-12  100.000000E-12 
+
+
+               X_U4A.jx1       X_U4A.jx2       
+               NJF             NJF             
+         VTO   -1              -1            
+        BETA  222.070000E-06  222.070000E-06 
+          IS  100.000000E-12  100.000000E-12 
+
+
+**** 07/04/23 09:40:22 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\project-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               R_R3            R_R15           R_R10           R_R9            
+           R    1               1               1               1            
+
+
+               R_R7            R_R6            R_R5            R_R8            
+           R    1               1               1               1            
+
+
+               R_R4            R_R24           
+           R    1               1            
+
+
+
+          JOB CONCLUDED
+
+**** 07/04/23 09:40:22 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\project-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .09
+

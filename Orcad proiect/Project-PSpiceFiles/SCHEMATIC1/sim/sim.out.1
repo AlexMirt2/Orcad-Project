@@ -1,0 +1,86 @@
+
+**** 07/02/23 18:33:39 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ d:\facultate\orcad proiecte\project-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "D:/REDLED.lib" 
+* From [PSPICE NETLIST] section of D:\Orcad\Working directory\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 10 
+.MC 10 TRAN V([out]) YMAX OUTPUT ALL SEED=200 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PROJECT
+R_R3         N06426 N06382 R_R3 2.67k TC=0,0 
+.model        R_R3 RES R=1 DEV=1% TC1=0 TC2=0
+R_R15         N06580 N11467 R_R15 6.6k TC=0,0 
+.model        R_R15 RES R=1 DEV=1% TC1=0 TC2=0
+V_V3         VCC 0 14
+R_R10         0 N19270 R_R10 1k TC=0,0 
+.model        R_R10 RES R=1 DEV=1% TC1=0 TC2=0
+R_R9         N19685 VCC  49.9 TC=0,0 
+R_R7         N06648 N06580 R_R7 6.19k TC=0,0 
+.model        R_R7 RES R=1 DEV=1% TC1=0 TC2=0
+R_R6         VREF2 N06648 R_R6 1k TC=0,0 
+.model        R_R6 RES R=1 DEV=1% TC1=0 TC2=0
+R_R12         VCC N06664  30k TC=0,0 
+R_R5         N19270 N06862 R_R5 2.67k TC=0,0 
+.model        R_R5 RES R=1 DEV=1% TC1=0 TC2=0
+R_R8         N06708 N06580 R_R8 121 TC=0,0 
+.model        R_R8 RES R=1 DEV=1% TC1=0 TC2=0
+R_Rs         N06668 VCC  {r} TC=0,0 
+R_R4         N06426 VREF1 R_R4 1k TC=0,0 
+.model        R_R4 RES R=1 DEV=1% TC1=0 TC2=0
+V_V2         -VCC 0 -14
+R_R16         VCC N16310  1k TC=0,0 
+R_R17         N16310 N16327  140 TC=0,0 
+R_R18         N16327 N16447  1k TC=0,0 
+R_R19         N16447 VREF1  1k TC=0,0 
+R_R22         VCC N17785  1k TC=0,0 
+R_R23         N17793 N17817  1k TC=0,0 
+R_R20         N17785 N17793  442 TC=0,0 
+R_R21         N17817 VREF2  1k TC=0,0 
+Q_T2         N06668 N06664 0 Q2N2222
+Q_T1         N06664 N06664 0 Q2N2222
+Q_T3         N19685 N11467 0 Q2N2222
+D_D1          N06708 0 REDLED 
+V_V4         N24484 0 5
+D_D2          N24484 0 REDLED 
+X_U1A         N06668 N06862 VCC -VCC N06862 TL082
+X_U1B         N06648 N06382 VCC -VCC N06580 TL082
+X_U2A         0 N16310 VCC -VCC N16327 TL082
+X_U2B         0 N16447 VCC -VCC VREF1 TL082
+X_U3A         0 N17785 VCC -VCC N17793 TL082
+X_U3B         0 N17817 VCC -VCC VREF2 TL082
+X_U4A         N19270 N06426 VCC -VCC N06382 TL082
+.PARAM  r=1k
+
+**** RESUMING sim.cir ****
+.END
+
+ERROR(ORPSIM-15140): Node out is undefined
+
+ERROR(ORPSIM-15142): Node out is floating
+

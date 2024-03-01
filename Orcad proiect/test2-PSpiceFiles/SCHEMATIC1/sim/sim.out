@@ -1,0 +1,85 @@
+
+**** 03/25/23 23:06:49 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ D:\Facultate\Orcad proiecte\test2-PSpiceFiles\SCHEMATIC1\sim.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\Orcad\Working directory\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TEST2
+R_R1         N00067 0  1k TC=0,0 
+R_R2         N00067 0  1k TC=0,0 
+V_V1         N00067 0 0Vdc
+
+**** RESUMING sim.cir ****
+.END
+
+**** 03/25/23 23:06:49 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ D:\Facultate\Orcad proiecte\test2-PSpiceFiles\SCHEMATIC1\sim.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00067)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/25/23 23:06:49 **** PSpice 22.1.0 (6 February 2023) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim"  [ D:\Facultate\Orcad proiecte\test2-PSpiceFiles\SCHEMATIC1\sim.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .06
+
